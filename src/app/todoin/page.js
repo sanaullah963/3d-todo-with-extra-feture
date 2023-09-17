@@ -1,8 +1,12 @@
+
+import Entertodo from '@/components/Enter-todo'
 import React from 'react'
 
 function page() {
   return (
-    <div>page</div>
+    <main>
+      <Entertodo/>
+    </main>
   )
 }
 
