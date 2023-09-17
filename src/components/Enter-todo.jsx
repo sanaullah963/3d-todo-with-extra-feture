@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { MdAssignmentAdd ,MdDelete } from "react-icons/Md";
 import toast, { Toaster } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodoItem, deletTodoItem } from '@/redux/todoSlice';
+import { addTodoItem, deletTodo } from '@/redux/todoSlice';
 function Entertodo() {
   // dispatch
   const dispatch = useDispatch()
@@ -26,7 +26,6 @@ function Entertodo() {
         si : si, 
         text : text,
       }));
-      console.log(deletTodoItem);
     }
     setText('');
   }
@@ -43,14 +42,14 @@ function Entertodo() {
       <div className='w-2/5 pt-10 border-s-8 border-s-gray-900'>
         {/* item start*/}
         {
-          getData.length>0 ?
+          getData.length > 0 ?
           (getData.map((item)=>(
-            <div className='bg-sky-200 w-4/5 m-auto rounded-md px-3 flex justify-between items-center gap-3 py-2 mb-2'>
+            <div key={item.id} className='bg-sky-200 w-4/5 m-auto rounded-md px-3 flex justify-between items-center gap-3 py-2 mb-2'>
           <p>{item.si}</p>
-          <div >
+          <div>
             <p>{item.text}</p>
           </div>
-          <button onClick={()=>dispatch(deletTodoItem(item.id))} >
+          <button onClick={() => dispatch(deletTodo(item.id))} >
             <MdDelete/>
             </button>
         </div>

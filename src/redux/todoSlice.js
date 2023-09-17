@@ -16,12 +16,13 @@ export const todoSlice = createSlice({
       }else{
         state.value = action.payload;
       }
+    },
+    deletTodo : (state,action)=>{
+      state.value = state.value.filter((item)=>item.id !== action.payload)
     }
-  },
-  deletTodoItem : (state,action)=>{
-    state.value = state.value.filter((item)=>item.id !== action.payload.id)
   }
 })
 // export
-export const {addTodoItem,deletTodoItem} = todoSlice.actions;
+export const { addTodoItem, deletTodo } = todoSlice.actions;
+
 export default todoSlice.reducer
