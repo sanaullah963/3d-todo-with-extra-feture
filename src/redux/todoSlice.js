@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 // initialState
 const initialState={
-  value:[]
+  value:[],
+  userData : []
 }
 // reducer
 export const todoSlice = createSlice({
@@ -19,10 +20,18 @@ export const todoSlice = createSlice({
     },
     deletTodo : (state,action)=>{
       state.value = state.value.filter((item)=>item.id !== action.payload)
+    },
+    user : (state,action)=>{
+      const existingData = state.userData.map((i) => i===action.payload);
+      if(existingData){
+        state.userData.push(action.payload);
+      }else{
+        state.userData = action.payload;
+      }
     }
   }
 })
 // export
-export const { addTodoItem, deletTodo } = todoSlice.actions;
+export const { addTodoItem, deletTodo, user } = todoSlice.actions;
 
 export default todoSlice.reducer
