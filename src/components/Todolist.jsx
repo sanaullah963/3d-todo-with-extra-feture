@@ -4,7 +4,8 @@ import { MdDelete } from "react-icons/md";
 import { useSelector , useDispatch} from "react-redux";
 import { deletTodo } from "@/redux/todoSlice";
 import Link from "next/link";
-function todolist() {
+import React from "react";
+function Todolist() {
   // useSelectou
   const getData = useSelector((state)=>state.todo.value);
   const dispatch = useDispatch()
@@ -35,4 +36,4 @@ function todolist() {
     </main>
   );
 }
-export default todolist;
+export default Todolist;
