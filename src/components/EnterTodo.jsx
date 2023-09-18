@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { MdAssignmentAdd, MdDelete } from "react-icons/Md";
+import { MdAssignmentAdd, MdDelete } from "react-icons/md";
 import toast, { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodoItem, deletTodo } from "@/redux/todoSlice";

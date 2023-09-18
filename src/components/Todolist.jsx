@@ -1,6 +1,6 @@
 'use client'
 import { Toaster } from "react-hot-toast";
-import { MdDelete } from "react-icons/Md";
+import { MdDelete } from "react-icons/md";
 import { useSelector , useDispatch} from "react-redux";
 import { deletTodo } from "@/redux/todoSlice";
 import Link from "next/link";
@@ -15,7 +15,7 @@ function todolist() {
         {
           getData.length > 0 ?
           (getData.map((item,index) => (
-            <div className="bg-sky-200 w-4/5 m-auto rounded-md px-3 flex justify-between items-center gap-3 py-2 mb-2">
+            <div key={item.id} className="bg-sky-200 w-4/5 m-auto rounded-md px-3 flex justify-between items-center gap-3 py-2 mb-2">
           <p>{index+1}</p>
           <div>
             <p>{item.text}</p>

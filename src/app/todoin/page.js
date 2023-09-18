@@ -1,5 +1,5 @@
 
-import Entertodo from '@/components/Enter-todo'
+import Entertodo from '@/components/EnterTodo'
 import React from 'react'
 
 function page() {
